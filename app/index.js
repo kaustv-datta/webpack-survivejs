@@ -1,3 +1,7 @@
 import component from './component';
+import styles from './main.css';
 
-document.body.appendChild(component('Hello MOTO'));
+var element = component('Hello MOTO');
+
+element.className = styles.redButton;
+document.body.appendChild(element);
