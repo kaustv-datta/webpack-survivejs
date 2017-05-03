@@ -1,7 +1,7 @@
 import component from './component';
-import styles from './main.css';
+import 'purecss';
+import './main.css';
 
-var element = component('Hello MOTO');
+var element = component();
 
-element.className = styles.redButton;
 document.body.appendChild(element);

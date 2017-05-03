@@ -1,7 +1,10 @@
-export default (text = 'Hello world') => {
+module.exports = () => {
   const element = document.createElement('div');
 
-  element.innerHTML = text;
+
+  element.className = 'pure-button';
+
+  element.innerHTML = 'Hello world';
 
   return element;
 };
