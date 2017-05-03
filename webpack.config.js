@@ -29,7 +29,9 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
-  parts.extractCSS({ use: 'css-loader' }),
+  parts.extractCSS({
+    use: ['css-loader', parts.autoprefix()],
+  }),
 ]);
 
 const developmentConfig = merge([
@@ -38,7 +40,7 @@ const developmentConfig = merge([
     host: process.env.HOST,
     port: process.env.PORT,
   }),
-  parts.loadCSS()
+  parts.loadCSS(),
 ]);
 
 module.exports = (env) => {
