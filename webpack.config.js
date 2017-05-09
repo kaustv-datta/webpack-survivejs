@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const glob = require('glob');
+
 const parts = require('./webpack.parts');
 
 const PATHS = {
@@ -25,7 +26,6 @@ const commonConfig = merge([
     ],
   },
   parts.lintJavaScript({ include: PATHS.app }),
-  // parts.loadCSS(),
   parts.lintCSS({ include: PATHS.app }),
   parts.loadFonts({
     options: {
@@ -33,6 +33,16 @@ const commonConfig = merge([
     },
   }),
   parts.loadJavaScript({ include: PATHS.app }),
+  parts.extractBundles([
+    {
+      name: 'vendor',
+      minChunks: ({ resource }) => (
+        resource &&
+        resource.indexOf('node_modules') >= 0 &&
+        resource.match(/\.js$/)
+      ),
+    },
+  ]),
 ]);
 
 const productionConfig = merge([
