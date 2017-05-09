@@ -80,7 +80,6 @@ module.exports = () => {
   return element;
 };
 
-
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
@@ -121,7 +120,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var element = __WEBPACK_IMPORTED_MODULE_0__component___default()();
 
 document.body.appendChild(element);
-
 
 /***/ })
 /******/ ]);
