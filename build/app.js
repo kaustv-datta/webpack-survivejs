@@ -1,7 +1,7 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 18:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = () => {
   const element = document.createElement('div');
@@ -9,6 +9,14 @@ module.exports = () => {
   // element.className = 'pure-button';
   element.className = 'fa fa-hand-spock-o fa-1g';
   element.innerHTML = 'Hello world';
+
+  element.onclick = () => {
+    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 41)).then(lazy => {
+      element.textContent = lazy.default;
+    }).catch(err => {
+      console.error(err);
+    });
+  };
 
   return element;
 };
