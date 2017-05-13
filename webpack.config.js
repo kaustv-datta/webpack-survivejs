@@ -58,6 +58,7 @@ const productionConfig = merge([
       name: '[name].[ext]',
     },
   }),
+  parts.clean(PATHS.build),
 ]);
 
 const developmentConfig = merge([
